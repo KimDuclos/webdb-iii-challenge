@@ -1,7 +1,14 @@
-const server = require('./server');
+const express = require('express');
+const port = 4000;
+const helmet = require('helmet');
+const cohorts = require('./routes/cohorts');
+const students = require('./routes/students');
+const server = express();
 
-const PORT = process.env.PORT || 4000;
+server.use(helmet());
+server.use(express.json());
 
-server.listen(PORT, () => {
-  console.log(`\n\n*** Now listening on port ${PORT} ***\n`);
-})
+server.use('/api/cohorts', cohorts);
+server.use('/api/students', students);
+
+server.listen(port, () => console.log(`Running on port ${port}`));

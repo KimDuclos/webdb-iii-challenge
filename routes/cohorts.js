@@ -12,7 +12,7 @@ router.get('/', async (req, res) => {
   try {
     const cohorts = await db('cohorts');
     res.status(200).json(cohorts);
-  } catch (error) { res.status(500).json({ error: 'Could not retrieve cohorts.' });
+  } catch (error) { res.status(500).json({ errorMessage: 'Could not retrieve cohorts.' });
   }
 });
 
@@ -28,7 +28,7 @@ router.get('/:id', async (req, res) => {
     } else {
       res.status(404).json({ error: 'Cohort not found in database.' });
     }
-  } catch (error) { res.status(500).json({ error: 'Could not retrieve cohort.' });
+  } catch (error) { res.status(500).json({ errorMessage: 'Could not retrieve cohort.' });
   }
 });
 
@@ -46,7 +46,7 @@ router.post('/', async (req, res) => {
         .first();
       res.status(201).json(created);
     }
-  } catch (error) { res.status(500).json({ error: 'Could not create cohort.' });
+  } catch (error) { res.status(500).json({ errorMessage: 'Could not create cohort.' });
   }
 });
 
@@ -62,7 +62,7 @@ router.delete('/:id', async (req, res) => {
     } else {
       res.status(404).json({ error: 'Cohort not found in database.' });
     }
-  } catch (error) { res.status(500).json({ error: 'Could not delete cohort.' });
+  } catch (error) { res.status(500).json({ errorMessage: 'Could not delete cohort.' });
   }
 });
 
@@ -85,7 +85,7 @@ router.put('/:id', async (req, res) => {
         res.status(404).json({ error: 'Cohort not found in database.' });
       }
     }
-  } catch (error) { res.status(500).json({ error: 'Could not update cohort.' });
+  } catch (error) { res.status(500).json({ errorMessage: 'Could not update cohort.' });
   }
 });
 

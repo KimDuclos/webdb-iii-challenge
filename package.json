@@ -6,17 +6,8 @@
   "scripts": {
     "server": "nodemon index.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/KimDuclos/webdb-iii-challenge"
-  },
   "keywords": [],
   "author": "Lambda - Kim Duclos",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/KimDuclos/webdb-iii-challenge/issues"
-  },
-  "homepage": "https://github.com/KimDuclos/webdb-iii-challenge#readme",
   "dependencies": {
     "express": "^4.16.4",
     "helmet": "^3.15.1",
