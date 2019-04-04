@@ -1,6 +1,6 @@
 # Building an API using a Relational Database
 
-## Topics
+## Topics.
 
 - Databases
 - Relational Databases
